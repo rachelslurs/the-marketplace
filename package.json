@@ -1,0 +1,60 @@
+{
+  "name": "the-marketplace",
+  "version": "1.0.0",
+  "description": "react app using USWDS",
+  "main": "gulpfile.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify", {
+          "presets": [
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.6",
+    "browserify": "^14.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-notify": "^2.1.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-util": "^3.0.1",
+    "pretty-hrtime": "^1.0.3",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.1.5",
+    "uswds": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelslurs/the-marketplace.git"
+  },
+  "keywords": [
+    "react",
+    "uswds",
+    "react-dom"
+  ],
+  "author": "Rachel Cantor <rachelcantor@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelslurs/the-marketplace/issues"
+  },
+  "homepage": "https://github.com/rachelslurs/the-marketplace#readme"
+}
