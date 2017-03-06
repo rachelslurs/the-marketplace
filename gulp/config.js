@@ -1,46 +1,54 @@
 var dest = './build',
-    src = './src',
-    node_modules = './node_modules';
+  src = './src',
+  node_modules = './node_modules';
 
 module.exports = {
-    browserSync: {
-        server: {
-            baseDir: [dest, src]
-        },
-        files: [
-            dest + '/**'
-        ]
+  browserSync: {
+    server: {
+      baseDir: [dest, src]
     },
-    uswds: {
-      styles: {
-        src: node_modules + '/uswds/src/stylesheets/**/*',
-        dest: src + '/sass/uswds'
-      },
-      fonts: {
-        src: node_modules + '/uswds/src/fonts/**/*',
-        dest: dest + '/assets/fonts'
-      }
+    files: [
+      dest + '/**'
+    ]
+  },
+  uswds: {
+    styles: {
+      src: node_modules + '/uswds/src/stylesheets/**/*',
+      dest: src + '/sass/uswds'
     },
-    sass: {
-        src: src + '/sass/main.scss',
-        watch: [
-            src + '/sass/**'
-        ],
-        dest: dest + '/assets/css'
+    fonts: {
+      src: node_modules + '/uswds/src/fonts/**/*',
+      dest: dest + '/assets/fonts'
     },
-    markup: {
-        src: src + "/*.html",
-        dest: dest
+    images: {
+      src: node_modules + '/uswds/src/img/**/*',
+      dest: dest + '/assets/img'
     },
-    browserify: {
-        // Enable source maps
-        debug: true,
-        // A separate bundle will be generated for each
-        // bundle config in the list below
-        bundleConfigs: [{
-            entries: src + '/app/app.jsx',
-            dest: dest,
-            outputName: 'app.js'
-        }]
+    javascript: {
+      src: node_modules + '/uswds/src/js/**/*',
+      dest: dest + '/assets/js'
     }
+  },
+  sass: {
+    src: src + '/sass/main.scss',
+    watch: [
+      src + '/sass/**'
+    ],
+    dest: dest + '/assets/css'
+  },
+  markup: {
+    src: src + "/*.html",
+    dest: dest
+  },
+  browserify: {
+    // Enable source maps
+    debug: true,
+    // A separate bundle will be generated for each
+    // bundle config in the list below
+    bundleConfigs: [{
+      entries: src + '/app/app.jsx',
+      dest: dest,
+      outputName: 'app.js'
+    }]
+  }
 };
