@@ -71,9 +71,9 @@ HouseholdData.prototype.inform = function() {
 	});
 };
 
-HouseholdData.prototype.addPerson = function(title) {
+HouseholdData.prototype.addPerson = function(info) {
 	console.log('HouseholdData', 'addPerson');
-	this.householdPersons = this.householdPersons.concat({id: Utils.uuid(), title: title, completed: false});
+	this.householdPersons = this.householdPersons.concat({id: Utils.uuid(), name: info.name, description: info.description, fruit: info.fruit});
 
 	this.inform();
 };
@@ -92,7 +92,7 @@ HouseholdData.prototype.save = function(personToSave, text) {
 	this.householdPersons = this.householdPersons.map(function(person) {
 		return person !== personToSave
 			? person
-			: Utils.extend({}, person, {title: text});
+			: Utils.extend({}, person, {text});
 	});
 
 	this.inform();

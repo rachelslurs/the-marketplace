@@ -7,6 +7,7 @@ var Bootstrap = require('react-bootstrap');
 const Table = require('react-bootstrap').Table;
 const Button = require('react-bootstrap').Button;
 const FormGroup = require('react-bootstrap').FormGroup;
+const Input = require('react-bootstrap').Input;
 const Modal = require('react-bootstrap').Modal;
 const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
 var Person = require('./person.jsx');
@@ -24,9 +25,11 @@ var AddPersonModal = React.createClass({
 		return {showModal: false};
 	},
 	close: function() {
+		console.log('close');
 		this.setState({showModal: false});
 	},
 	open: function() {
+		console.log('open');
 		this.setState({showModal: true});
 		if (document.getElementById("name") && document.getElementById("description") && document.getElementById("fruit")) {
 			$("#name").val("");
@@ -37,6 +40,7 @@ var AddPersonModal = React.createClass({
 		}
 	},
 	add: function() {
+		console.log('add');
 		let name = document.getElementById("name").value;
 		let description = document.getElementById("description").value;
 		let fruit = document.getElementById("fruit").value;
@@ -50,23 +54,24 @@ var AddPersonModal = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<Button bsClass="usa-button" onClick={this.addNewPerson} id="show">
+				<Button bsClass="usa-button" onClick={this.open} id="show">
 					Add Person
 				</Button>
-				<Modal bsSize="small" show={this.state.showModal} onHide={this.closeModal} aria-labelledby="modalTitle">
+				<Modal bsSize="small" show={this.state.showModal} onHide={this.close} aria-labelledby="modalTitle">
 					<Modal.Header closeButton>
 						<Modal.Title id="modalTitle">Add a Person</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<form>
-							<FormGroup id="name" type="text" label="Name" placeholder="Enter name"/>
-							<FormGroup id="description" type="text" label="Description" placeholder="Enter description"/>
-							<FormGroup id="fruit" type="text" label="Favorite Fruit" placeholder="Enter favorite fruit"/>
+							<Input id="title" type="text" label="Title" placeholder="Enter title"/>
+							<Input id="name" type="text" label="Name" placeholder="Enter name"/>
+							<Input id="description" type="text" label="Description" placeholder="Enter description"/>
+							<Input id="fruit" type="text" label="Favorite Fruit" placeholder="Enter favorite fruit"/>
 						</form>
 					</Modal.Body>
 					<Modal.Footer>
-						<Button onClick={this.addNewPerson} bsClass="usa-button" id="add">Add Person to Household</Button>
-						<Button onClick={this.closeModal} bsClass="usa-button usa-button-gray">Close</Button>
+						<Button onClick={this.add} bsClass="usa-button" id="add">Add Person to Household</Button>
+						<Button onClick={this.close} bsClass="usa-button usa-button-gray">Close</Button>
 					</Modal.Footer>
 				</Modal>
 			</div>
@@ -156,8 +161,9 @@ var HouseholdApp = React.createClass({
 						{persons}
 					</tbody>
 				</Table>
-				<input className="new-todo" placeholder="What needs to be done?" value={this.state.newPerson} onKeyDown={this.handleNewPersonKeyDown} onChange={this.handleChange} autoFocus={true}/>
-				<AddPersonModal/>
+				<div>
+					<input className="new-todo" placeholder="What needs to be done?" value={this.state.newPerson} onKeyDown={this.handleNewPersonKeyDown} onChange={this.handleChange} autoFocus={true}/>
+				</div>
 			</div>
 		);
 	}
