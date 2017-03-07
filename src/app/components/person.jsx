@@ -1,10 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Bootstrap = require('react-bootstrap');
+const React = require('react');
+const Button = require('react-bootstrap').Button;
 
-const Button = Bootstrap.Button;
-
-var Person = React.createClass({
+const Person = React.createClass({
 	render: function() {
 		return (
 			<tr>
