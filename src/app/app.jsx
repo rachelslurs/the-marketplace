@@ -105,7 +105,7 @@
 					<div>
 						<div>
 							<Button onClick={this.open} id="show" ref="target" bsSize="large" block>
-								Add Person
+								Add New Member
 							</Button>
 							<Overlay {...sharedProps} placement="top">
 								<Popover id="popover-positioned-top" title="Your household is empty">
@@ -121,26 +121,26 @@
 							<Modal.Body>
 								<Form horizontal>
 									<FormGroup controlId="name">
-										<Col componentClass={ControlLabel} sm={2}>
-											Name
+										<Col componentClass={ControlLabel} sm={4}>
+											Full Name
 										</Col>
-										<Col sm={10}>
+										<Col sm={8}>
 											<FormControl type="text" placeholder="Name"/>
 										</Col>
 									</FormGroup>
 									<FormGroup controlId="description">
-										<Col componentClass={ControlLabel} sm={2}>
+										<Col componentClass={ControlLabel} sm={4}>
 											Description
 										</Col>
-										<Col sm={10}>
+										<Col sm={8}>
 											<FormControl type="text" placeholder="Description"/>
 										</Col>
 									</FormGroup>
 									<FormGroup controlId="fruit">
-										<Col componentClass={ControlLabel} sm={2}>
+										<Col componentClass={ControlLabel} sm={4}>
 											Favorite Fruit
 										</Col>
-										<Col sm={10}>
+										<Col sm={8}>
 											<FormControl type="text" placeholder="Favorite Fruit"/>
 										</Col>
 									</FormGroup>
@@ -149,7 +149,7 @@
 							<Modal.Footer>
 								<FormGroup>
 									<Button onClick={this.add} id="add" type="submit" bsStyle="primary">
-										Add Person to Household
+										Add New Member to Household
 									</Button>
 								</FormGroup>
 								<FormGroup>
@@ -171,7 +171,7 @@
 			<HouseholdApp model={model}/>, document.getElementById("react-target")
     );
 	}
-  
+
 	model.subscribe(render);
 	render();
 
