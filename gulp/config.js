@@ -10,24 +10,6 @@ module.exports = {
 		},
 		files: [dest + '/**']
 	},
-	uswds: {
-		styles: {
-			src: node_modules + '/uswds/src/stylesheets/**/*',
-			dest: src + '/sass/uswds'
-		},
-		fonts: {
-			src: node_modules + '/uswds/src/fonts/**/*',
-			dest: dest + '/assets/fonts'
-		},
-		imgs: {
-			src: node_modules + '/uswds/src/img/**/*',
-			dest: dest + '/assets/img'
-		},
-		javascript: {
-			src: node_modules + '/uswds/src/js/**/*',
-			dest: dest + '/assets/js'
-		}
-	},
 	images: {
 		src: src + '/img/*',
 		dest: dest + '/assets/img'

@@ -3,124 +3,100 @@
 header {
   padding-top: 20px;
   padding-bottom: 20px;
+  p {
+    color: $gray-lighter;
+  }
+  .nav > li > a {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .navbar-brand {
+    font-weight: bold;
+  }
+  .navbar-inverse {
+    background-image: url("/assets/img/dark-dot.png");
+    .nav > .active > a,
+    .nav > .active > a:focus,
+    .nav > .active > a:hover {
+        color: #fff;
+    }
+  }
   @media (min-width: $screen-sm-min) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 
-footer h5,
-header p {
-  color: $gray-lighter;
-}
-
-.btn-block {
-  margin-top: 30px;
-}
-
-td {
-  .btn {
-    line-height: 1;
+.app {
+  margin-bottom: 40px;
+  min-height: 400px;
+  .page-header {
+    border-bottom: 0 solid $gray-light;
+    margin-top: 22px;
+    padding-bottom: 0;
   }
-}
-
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
-  vertical-align: middle;
-}
-
-.navbar-inverse {
-  background-image: url("/img/cartographer.png");
+  p.lead {
+    margin-bottom: 40px;
+  }
+  td {
+    .btn {
+      line-height: 1;
+    }
+  }
+  .table > tbody > tr > td,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > td,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > thead > tr > th {
+    vertical-align: middle;
+  }
+  td.button-column,
+  th.button-column {
+    width: 1rem;
+  }
+  .btn-block {
+    margin-top: 30px;
+  }
 }
 
 footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  // margin-top: 100px;
   color: #99979c;
   background-color: $gray-base;
-  background-image: url("/img/dark-dot.png");
-}
-
-.app {
-  margin-bottom: 40px;
-  min-height: 400px;
-}
-
-p.lead {
-  // color: $gray-base;
-  margin-bottom: 40px;
-}
-
-.footer {
-  padding-bottom: 20px;
-}
-
-td.button-column,
-th.button-column {
-  width: 1rem;
-}
-
-.page-header {
-  border-bottom: 0 solid $gray-light;
-  margin-top: 22px;
-  padding-bottom: 0;
-}
-
-.nav-pills {
-  li.active {
-    a,
-    a:focus,
-    a:hover {
-      color: $white;
-      border-bottom-color: $turquoise;
-      background: transparent;
+  background-image: url("/assets/img/dark-dot.png");
+  .footer {
+    padding-bottom: 20px;
+    h5 {
+      color: $gray-lighter;
     }
-    color: $white;
-    border-bottom-color: $turquoise;
-  }
+    .nav-pills {
+      li.active {
+        a,
+        a:focus,
+        a:hover {
+          color: $white;
+          border-bottom-color: $salmon;
+          border-bottom-color: rgba(244, 67, 54, 1);
+          background: transparent;
+        }
+        color: $white;
+        border-bottom-color: $turquoise;
+      }
 
-  a {
-    border-bottom: 2px solid transparent;
-    color: $gray-light;
+      a {
+        border-bottom: 2px solid transparent;
+        color: $gray-light;
 
-    &:focus,
-    &:hover {
-      background-color: transparent;
-      color: $white;
-      border-bottom-color: $turquoise;
-      border-bottom-color: rgba(0, 188, 212, .5);
+        &:focus,
+        &:hover {
+          background-color: transparent;
+          color: $white;
+          border-bottom-color: $turquoise;
+          border-bottom-color: rgba(0, 188, 212, .5);
+        }
+      }
     }
-  }
-}
-
-.nav > li > a {
-  font-size: 16px;
-  font-weight: bold;
-  border-bottom: 2px solid transparent;
-}
-
-header > .nav > li > a:focus,
-header > .nav > li > a:hover {
-  background-color: transparent;
-  border-bottom-color: $salmon;
-  border-bottom-color: rgba(244, 67, 54, .5);
-}
-
-header > .nav > .active > a,
-header > .nav > .active > a:focus,
-header > .nav > .active > a:hover {
-  color: #fff;
-  border-bottom-color: $salmon;
-}
-@media (min-width: $screen-md-min) {
-  .footer-author {
-    float: right;
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
 }

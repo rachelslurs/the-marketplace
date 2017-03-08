@@ -3,7 +3,6 @@ const Button = require('react-bootstrap').Button;
 
 const Person = React.createClass({
 	render: function() {
-    console.log("this.props", this.props.person);
 		return (
 			<tr>
 				<th scope="row" id={this.props.person.id}>{this.props.person.name}</th>

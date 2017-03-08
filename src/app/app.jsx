@@ -1,7 +1,8 @@
 (function() {
-	require('uswds');
 	const React = require('react');
 	const ReactDOM = require('react-dom');
+
+  // Import React Bootstrap components
 	const Col = require('react-bootstrap').Col;
 	const Table = require('react-bootstrap').Table;
 	const Button = require('react-bootstrap').Button;
@@ -13,16 +14,13 @@
 	const ControlLabel = require('react-bootstrap').ControlLabel;
 	const Popover = require('react-bootstrap').Popover;
 	const Fade = require('react-bootstrap').Fade;
+
 	const HouseholdData = require('./store/householdData.jsx');
 	const Person = require('./components/person.jsx');
 
 	const HouseholdApp = React.createClass({
 		getInitialState: function() {
-
-			const householdPersons = this.props.model.householdPersons;
-			const persons = (householdPersons.length < 1)
-				? false
-				: true;
+			const persons = (this.props.model.householdPersons.length < 1) ? false : true;
 			return {
 				showModal: false,
 				hasData: persons,
@@ -30,8 +28,7 @@
 			};
 		},
 		componentWillReceiveProps: function() {
-			const householdPersons = this.props.model.householdPersons;
-			if (householdPersons.length < 1) {
+			if (this.props.model.householdPersons.length < 1) {
 				this.setState({showTip: true});
 			} else {
 				this.setState({showTip: false});
@@ -45,14 +42,13 @@
 			}
 		},
 		open: function() {
-
 			this.setState({showModal: true, showTip: false});
 			if (document.getElementById("name") && document.getElementById("description") && document.getElementById("fruit")) {
 				$("#name").val("");
 				$("#description").val("");
 				$("#fruit").val("Apple");
-			} else {
-        console.log('hi');
+			}
+      else {
 				requestAnimationFrame(this.open);
 			}
 		},
@@ -78,10 +74,10 @@
 		},
 
 		render: function() {
-			const householdPersons = this.props.model.householdPersons;
-      console.log('householdPersons', householdPersons);
-			const persons = householdPersons.map(function(person) {
-				return (<Person key={person.id} person={person} onDestroy={this.destroy.bind(this, person)}/>);
+			const persons = this.props.model.householdPersons.map(function(person) {
+				return (
+          <Person key={person.id} person={person} onDestroy={this.destroy.bind(this, person)}/>
+        );
 			}, this);
 			const sharedProps = {
 				show: this.state.showTip,
@@ -89,7 +85,6 @@
 			};
 			return (
 				<div>
-
 					<Fade in={this.state.hasData}>
 						<div>
 							<Table responsive striped>
@@ -173,9 +168,10 @@
 	const model = new HouseholdData("currentHousehold");
 	function render() {
 		ReactDOM.render(
-			<HouseholdApp model={model}/>, document.getElementById("react-target"));
+			<HouseholdApp model={model}/>, document.getElementById("react-target")
+    );
 	}
-
+  
 	model.subscribe(render);
 	render();
 
