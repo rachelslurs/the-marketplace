@@ -90,7 +90,7 @@
 
 					<Fade in={this.state.hasData}>
 						<div>
-							<Table responsive>
+							<Table responsive striped>
 								<thead>
 									<tr>
 										<th scope="col">Full Name</th>
@@ -151,18 +151,14 @@
 							</Modal.Body>
 							<Modal.Footer>
 								<FormGroup>
-									<Col smOffset={2} sm={10}>
-										<Button onClick={this.add} id="add" type="submit" bsStyle="success">
-											Add Person to Household
-										</Button>
-									</Col>
+									<Button onClick={this.add} id="add" type="submit" bsStyle="primary">
+										Add Person to Household
+									</Button>
 								</FormGroup>
 								<FormGroup>
-									<Col smOffset={2} sm={10}>
-										<Button onClick={this.close} type="button">
-											Close
-										</Button>
-									</Col>
+									<Button onClick={this.close} type="button">
+										Close
+									</Button>
 								</FormGroup>
 							</Modal.Footer>
 						</Modal>
