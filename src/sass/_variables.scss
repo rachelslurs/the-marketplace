@@ -8,10 +8,13 @@ $gray-base: darken(#112e51,5%) !default;
 $gray-darker: lighten($gray-base, 13.5%) !default; // #222
 $gray-dark: lighten($gray-base, 20%) !default; // #333
 $gray: lighten($gray-base, 33.5%) !default; // #555
-$gray-light: lighten($gray-base, 55%) !default; // #777
-$gray-lighter: lighten($gray-base, 72%) !default; // #eee
+$gray-light: #777 !default; // #777
+$gray-lighter: #ececec !default; // #eee
 $white: #ffffff !default; // #fff
-$brand-primary: darken(#2196f3,6%) !default; // #337ab7
+$turquoise: #00bcd4;
+$indigo: #3F51B5;
+$salmon: #F44336;
+$brand-primary: $indigo!default; // #337ab7
 $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
@@ -19,17 +22,17 @@ $brand-danger: #d9534f !default; //== Scaffolding
 //
 //## Settings for some of the most global styles.
 //** Background color for `<body>`.
-$body-bg: $gray-base !default; //** Global text color on `<body>`.
-$text-color: $white !default; //** Global textual link color.
-$link-color: lighten($gray-light,12%) !default; //** Link hover color set via `darken()` function.
-$link-hover-color: $white !default; //** Link hover decoration.
+$body-bg: $white !default; //** Global text color on `<body>`.
+$text-color: $gray-base !default; //** Global textual link color.
+$link-color: $indigo !default; //** Link hover decoration.
+$link-hover-color: darken($link-color, 15%) !default; //** Link hover color set via `darken()` function.
 $link-hover-decoration: underline !default; //== Typography
 //## Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif: "Merriweather", Georgia, "Times New Roman", Times, serif !default; //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-sans-serif: "Work Sans", Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default; //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
-$font-size-base: 14px !default;
+$font-size-base: 16px !default;
 $font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small: ceil(($font-size-base * 0.85)) !default; // ~12px
 $font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
@@ -43,10 +46,10 @@ $line-height-base: 1.428571429 !default; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
 //** By default, this inherits from the `<body>`.
-$headings-font-family: $font-family-serif !default;
+$headings-font-family: inherit !default;
 $headings-font-weight: 800 !default;
 $headings-line-height: 1.1 !default;
-$headings-color: lighten($gray-lighter,15%) !default; //== Iconography
+$headings-color: $gray-darker !default; //== Iconography
 //
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 //** Load fonts from this directory.
@@ -67,9 +70,9 @@ $padding-xs-vertical: 1px !default;
 $padding-xs-horizontal: 5px !default;
 $line-height-large: 1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small: 1.5 !default;
-$border-radius-base: 4px !default;
-$border-radius-large: 6px !default;
-$border-radius-small: 3px !default; //** Global color for active items (e.g., navs or dropdowns).
+$border-radius-base: 0 !default;
+$border-radius-large: 0 !default;
+$border-radius-small: 0 !default; //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color: #fff !default; //** Global background color for active items (e.g., navs or dropdowns).
 $component-active-bg: $brand-primary !default; //** Width of the `border` for generating carets that indicate dropdowns.
 $caret-width-base: 4px !default; //** Carets increase slightly in size for larger components.
@@ -79,19 +82,19 @@ $caret-width-large: 5px !default; //== Tables
 //** Padding for `<th>`s and `<td>`s.
 $table-cell-padding: 8px !default; //** Padding for cells in `.table-condensed`.
 $table-condensed-cell-padding: 5px !default; //** Default background color used for all tables.
+//** Default background color used for all tables.
 $table-bg: transparent !default; //** Background color used for `.table-striped`.
-$table-bg-accent: lighten($gray-base, 6%) !default; //** Background color used for `.table-hover`.
+$table-bg-accent: #f9f9f9 !default; //** Background color used for `.table-hover`.
 $table-bg-hover: #f5f5f5 !default;
 $table-bg-active: $table-bg-hover !default; //** Border color for table and cell borders.
-$table-border-color: $gray-lighter !default; //== Buttons
-//
+$table-border-color: #ddd !default; //
 //## For each of Bootstrap's buttons, define text, background and border color.
 $btn-font-weight: bold !default;
 $btn-default-color: $gray-base !default;
 $btn-default-bg: #fff !default;
-$btn-default-border: $gray-lighter !default;
+$btn-default-border: $gray-darker !default;
 $btn-primary-color: #fff !default;
-$btn-primary-bg: $brand-primary !default;
+$btn-primary-bg: $indigo !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 $btn-success-color: #fff !default;
 $btn-success-bg: $brand-success !default;
@@ -114,15 +117,15 @@ $btn-border-radius-small: $border-radius-small !default; //== Forms
 //** `<input>` background color
 $input-bg: #fff !default; //** `<input disabled>` background color
 $input-bg-disabled: $gray-lighter !default; //** Text color for `<input>`s
-$input-color: $gray-dark !default; //** `<input>` border color
+$input-color: $gray-base !default; //** `<input>` border color
 $input-border: #ccc !default; // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 $input-border-radius: $border-radius-base !default; //** Large `.form-control` border radius
 $input-border-radius-large: $border-radius-large !default; //** Small `.form-control` border radius
 $input-border-radius-small: $border-radius-small !default; //** Border color for inputs on focus
-$input-border-focus: #66afe9 !default; //** Placeholder text color
-$input-color-placeholder: #777 !default; //** Default `.form-control` height
+$input-border-focus: $gray-dark !default; //** Placeholder text color
+$input-color-placeholder: #888 !default; //** Default `.form-control` height
 $input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2) !default; //** Large `.form-control` height
 $input-height-large: (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default; //** Small `.form-control` height
 $input-height-small: (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default; //** `.form-group` margin
@@ -225,7 +228,7 @@ $navbar-default-toggle-icon-bar-bg: #888 !default;
 $navbar-default-toggle-border-color: #ddd !default; //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color: lighten($gray-light, 15%) !default;
-$navbar-inverse-bg: $gray-base !default;
+$navbar-inverse-bg: $gray-darker !default;
 $navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default; // Inverted navbar links
 $navbar-inverse-link-color: lighten($gray-light, 15%) !default;
 $navbar-inverse-link-hover-color: #fff !default;
@@ -314,11 +317,11 @@ $tooltip-arrow-color: $tooltip-bg !default; //== Popovers
 //
 //##
 //** Popover body background color
-$popover-bg: $gray-dark !default; //** Popover maximum width
+$popover-bg: $white !default; //** Popover maximum width
 $popover-max-width: 276px !default; //** Popover border color
-$popover-border-color: rgba(0,0,0,1) !default; //** Popover fallback border color
+$popover-border-color: $indigo !default; //** Popover fallback border color
 $popover-fallback-border-color: #000 !default; //** Popover title background color
-$popover-title-bg: darken($popover-bg, 10%) !default; //** Popover arrow width
+$popover-title-bg: transparent !default; //** Popover arrow width
 $popover-arrow-width: 14px !default; //** Popover arrow color
 $popover-arrow-color: $popover-bg !default; //** Popover outer arrow width
 $popover-arrow-outer-width: ($popover-arrow-width + 1) !default; //** Popover outer arrow color
@@ -341,12 +344,12 @@ $label-link-hover-color: #fff !default; //== Modals
 $modal-inner-padding: 15px !default; //** Padding applied to the modal title
 $modal-title-padding: 15px !default; //** Modal title line-height
 $modal-title-line-height: $line-height-base !default; //** Background color of modal content area
-$modal-content-bg: $gray-darker !default; //** Modal content border color
-$modal-content-border-color: $gray-darker !default; //** Modal content border color **for IE8**
+$modal-content-bg: $white !default; //** Modal content border color
+$modal-content-border-color: $white !default; //** Modal content border color **for IE8**
 $modal-content-fallback-border-color: #999 !default; //** Modal backdrop background color
 $modal-backdrop-bg: #000 !default; //** Modal backdrop opacity
 $modal-backdrop-opacity: 0.5 !default; //** Modal header border color
-$modal-header-border-color: $gray-darker !default; //** Modal footer border color
+$modal-header-border-color: $white !default; //** Modal footer border color
 $modal-footer-border-color: $modal-header-border-color !default;
 $modal-lg: 800px !default;
 $modal-md: 600px !default;
@@ -467,7 +470,7 @@ $carousel-caption-color: #fff !default; //== Close
 //
 //##
 $close-font-weight: bold !default;
-$close-color: $gray-lighter !default;
+$close-color: $gray-base !default;
 $close-text-shadow: 1px 1px 1px $gray-base !default; //== Code
 //
 //##

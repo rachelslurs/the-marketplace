@@ -8,6 +8,6 @@ gulp.task('clean', function() {
 
 gulp.task('build', function(done) {
 	runSequence('clean', [
-		'browserify', 'markup', 'bootstrap', 'sass'
+		'browserify', 'markup', 'bootstrap', 'images', 'sass'
 	], done);
 });

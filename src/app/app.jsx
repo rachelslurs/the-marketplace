@@ -52,6 +52,7 @@
 				$("#description").val("");
 				$("#fruit").val("Apple");
 			} else {
+        console.log('hi');
 				requestAnimationFrame(this.open);
 			}
 		},
@@ -78,6 +79,7 @@
 
 		render: function() {
 			const householdPersons = this.props.model.householdPersons;
+      console.log('householdPersons', householdPersons);
 			const persons = householdPersons.map(function(person) {
 				return (<Person key={person.id} person={person} onDestroy={this.destroy.bind(this, person)}/>);
 			}, this);
@@ -96,7 +98,7 @@
 										<th scope="col">Full Name</th>
 										<th scope="col">Description</th>
 										<th scope="col">Favorite Fruit</th>
-										<th scope="col">&nbsp;</th>
+										<th scope="col" className="button-column">&nbsp;</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -107,10 +109,10 @@
 					</Fade>
 					<div>
 						<div>
-							<Button onClick={this.open} id="show" ref="target" bsSize="large">
+							<Button onClick={this.open} id="show" ref="target" bsSize="large" block>
 								Add Person
 							</Button>
-							<Overlay {...sharedProps} placement="right">
+							<Overlay {...sharedProps} placement="top">
 								<Popover id="popover-positioned-top" title="Your household is empty">
 									<p>Add a person to your household by clicking this button.</p>
 								</Popover>

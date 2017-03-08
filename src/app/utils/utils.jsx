@@ -19,6 +19,7 @@ var Utils = {
 	},
 
 	store: function(namespace, data) {
+    console.log('changed data', data);
 		// If data is being changed
 		if (data) {
 			return localStorage.setItem(namespace, JSON.stringify(data));

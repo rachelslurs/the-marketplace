@@ -1,13 +1,49 @@
 @import 'bootstrap-custom';
 
-#header {}
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (min-width: $screen-sm-min) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+footer h5,
+header p {
+  color: $gray-lighter;
+}
+
+.btn-block {
+  margin-top: 30px;
+}
+
+td {
+  .btn {
+    line-height: 1;
+  }
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+
+.navbar-inverse {
+  background-image: url("/img/cartographer.png");
+}
 
 footer {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-top: 100px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  // margin-top: 100px;
   color: #99979c;
-  background-color: #2a2730;
+  background-color: $gray-base;
+  background-image: url("/img/dark-dot.png");
 }
 
 .app {
@@ -16,7 +52,7 @@ footer {
 }
 
 p.lead {
-  color: $gray-lighter;
+  // color: $gray-base;
   margin-bottom: 40px;
 }
 
@@ -24,10 +60,15 @@ p.lead {
   padding-bottom: 20px;
 }
 
+td.button-column,
+th.button-column {
+  width: 1rem;
+}
+
 .page-header {
-  border-bottom: 2px solid $gray-light;
-  border-bottom-color: $gray-light;
-  border-bottom-color: rgba(125, 172, 228, .2);
+  border-bottom: 0 solid $gray-light;
+  margin-top: 22px;
+  padding-bottom: 0;
 }
 
 .nav-pills {
@@ -36,101 +77,50 @@ p.lead {
     a:focus,
     a:hover {
       color: $white;
-      border-bottom-color: $gray-light;
+      border-bottom-color: $turquoise;
       background: transparent;
     }
     color: $white;
-    border-bottom-color: $gray-light;
+    border-bottom-color: $turquoise;
   }
 
   a {
     border-bottom: 2px solid transparent;
+    color: $gray-light;
 
     &:focus,
     &:hover {
       background-color: transparent;
-      border-bottom-color: $gray-light;
-      border-bottom-color: rgba(125, 172, 228, .6);
+      color: $white;
+      border-bottom-color: $turquoise;
+      border-bottom-color: rgba(0, 188, 212, .5);
     }
   }
 }
 
-.footer-links > li,
-.masthead-nav > li {
-  display: inline-block;
-}
-
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-
-.footer-links > li + li {
-  margin-right: 20px;
-}
-
-.footer-links > li > a,
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
+.nav > li > a {
   font-size: 16px;
   font-weight: bold;
   border-bottom: 2px solid transparent;
 }
 
-.masthead-nav > li > a:focus,
-.masthead-nav > li > a:hover {
+header > .nav > li > a:focus,
+header > .nav > li > a:hover {
   background-color: transparent;
-  border-bottom-color: $gray-light;
-  border-bottom-color: rgba(125, 172, 228, .6);
+  border-bottom-color: $salmon;
+  border-bottom-color: rgba(244, 67, 54, .5);
 }
 
-.footer-links > li > a:focus,
-.footer-links > li > a:hover {
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.footer-links > .active > a,
-.footer-links > .active > a:focus,
-.footer-links > .active > a:hover {
-  color: $white;
-  border-bottom-color: $gray-light;
-}
-
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:focus,
-.masthead-nav > .active > a:hover {
+header > .nav > .active > a,
+header > .nav > .active > a:focus,
+header > .nav > .active > a:hover {
   color: #fff;
-  border-bottom-color: $gray-light;
+  border-bottom-color: $salmon;
 }
 @media (min-width: $screen-md-min) {
-  .footer-links,
-  .masthead-brand {
-    float: left;
-  }
-
   .footer-author {
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
-/*
- * Affix and center
- */
-// @media (min-width: $screen-md-min) {
-//   /* Handle the widths */
-//   .mastfoot,
-//   .masthead,
-//   .mastmain {
-//     width: 100%;
-//     /* Must be percentage or pixels for horizontal alignment */
-//   }
-// }
-// @media (min-width: 992px) {
-//   .mastfoot,
-//   .masthead,
-//   .mastmain {
-//     width: 700px;
-//   }
-// }

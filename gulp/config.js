@@ -19,7 +19,7 @@ module.exports = {
 			src: node_modules + '/uswds/src/fonts/**/*',
 			dest: dest + '/assets/fonts'
 		},
-		images: {
+		imgs: {
 			src: node_modules + '/uswds/src/img/**/*',
 			dest: dest + '/assets/img'
 		},
@@ -28,10 +28,18 @@ module.exports = {
 			dest: dest + '/assets/js'
 		}
 	},
+	images: {
+		src: src + '/img/*',
+		dest: dest + '/assets/img'
+	},
 	bootstrap: {
 		styles: {
 			src: node_modules + '/bootstrap-sass/assets/stylesheets/bootstrap/**/*',
 			dest: src + '/sass/bootstrap'
+		},
+		fonts: {
+			src: node_modules + '/bootstrap-sass/assets/fonts/bootstrap/*',
+			dest: dest + '/assets/fonts/bootstrap'
 		}
 	},
 	sass: {
