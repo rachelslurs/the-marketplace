@@ -14,7 +14,7 @@ header {
     font-weight: bold;
   }
   .navbar-inverse {
-    background-image: url("/assets/img/dark-dot.png");
+    background-image: url("../img/dark-dot.png");
     .nav > .active > a,
     .nav > .active > a:focus,
     .nav > .active > a:hover {
@@ -65,7 +65,7 @@ footer {
   padding-bottom: 5rem;
   color: #99979c;
   background-color: $gray-base;
-  background-image: url("/assets/img/dark-dot.png");
+  background-image: url("../img/dark-dot.png");
   .footer {
     padding-bottom: 20px;
     h5 {
